@@ -1,6 +1,9 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.CheckBox
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
