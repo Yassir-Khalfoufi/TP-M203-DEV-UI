@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -11,44 +10,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forfait"
+            android:text="Climatiseur"
             android:textSize="24sp"
-            android:textStyle="bold"
-            />
-        <RadioGroup
-            android:id="@+id/grpForfait"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/rad30"
+            android:textStyle="bold" />
+
+        <ToggleButton
+            android:id="@+id/tglClim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30 min: 6DH"
-            android:textSize="22sp"
-            />
-        <RadioButton
-            android:id="@+id/rad60"
+            android:textOff="Clim : Off"
+            android:textOn="Clim: On"
+            android:textSize="20sp" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/swSilence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1 Heure: 10DH"
-            android:textSize="22sp"
-            />
-        <RadioButton
-            android:id="@+id/rad120"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2 Heures: 18DH"
-            android:textSize="22sp"
-            />
-        </RadioGroup>
+            android:text="Mode Silencieux"
+            android:textSize="22sp" />
+
         <TextView
-            android:id="@+id/total"
+            android:id="@+id/txtEtat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            />
+            android:layout_marginTop="10dp" />
     </LinearLayout>
 </ScrollView>
