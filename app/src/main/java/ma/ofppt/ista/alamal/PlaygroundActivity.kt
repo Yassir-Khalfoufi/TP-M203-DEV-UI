@@ -3,6 +3,8 @@ package ma.ofppt.ista.alamal
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -14,29 +16,14 @@ class PlaygroundActivity : AppCompatActivity() {
         setContentView(R.layout.activity_playground)
 
         // Votre code ici
-        val imp = findViewById<CheckBox>(R.id.chkImpression)
-        val csq = findViewById<CheckBox>(R.id.chkCasque)
-        val scn = findViewById<CheckBox>(R.id.chkScanner)
-        val calc = findViewById<Button>(R.id.prix)
-        val totalText = findViewById<TextView>(R.id.total)
-
-        calc.setOnClickListener {
-            var total = 0
-            var optChoisis = 0
-
-            if (imp.isChecked) {
-                total += 2
-                optChoisis++
+        val group = findViewById<RadioGroup>(R.id.grpForfait)
+        val total = findViewById<TextView>(R.id.total)
+        group.setOnCheckedChangeListener { _ /*(group isn't used)*/, i ->
+            when (i) {
+                R.id.rad30 -> total.text = "A payer : 6DH"
+                R.id.rad60 -> total.text = "A payer : 10DH"
+                R.id.rad120 -> total.text = "A payer : 18DH"
             }
-            if (csq.isChecked) {
-                total += 2
-                optChoisis++
-            }
-            if (scn.isChecked) {
-                total += 2
-                optChoisis++
-            }
-            totalText.text = "Le prix totoal est : $total ($optChoisis Otpions)"
         }
 
     }

@@ -11,46 +11,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Elements: 2DH chacun"
-            />
-        <CheckBox
-            android:id="@+id/chkImpression"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Impression"
+            android:text="Forfait"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+        <RadioGroup
+            android:id="@+id/grpForfait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rad30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="30 min: 6DH"
             android:textSize="22sp"
             />
-        <CheckBox
-            android:id="@+id/chkCasque"
+        <RadioButton
+            android:id="@+id/rad60"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Casque audio"
+            android:text="1 Heure: 10DH"
             android:textSize="22sp"
             />
-        <CheckBox
-            android:id="@+id/chkScanner"
+        <RadioButton
+            android:id="@+id/rad120"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Scanner"
+            android:text="2 Heures: 18DH"
             android:textSize="22sp"
             />
-        <Button
-            android:id="@+id/prix"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Calculer"
-            android:textColor="#00FF00"
-            />
+        </RadioGroup>
         <TextView
             android:id="@+id/total"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             />
-
     </LinearLayout>
 </ScrollView>
