@@ -14,29 +14,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Climatiseur"
-            android:textSize="24sp"
+            android:text="Poste souhaite"
+            android:minHeight="24sp"
             android:textStyle="bold" />
 
-        <ToggleButton
-            android:id="@+id/tglClim"
-            android:layout_width="wrap_content"
+        <Spinner
+            android:id="@+id/spPoste"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textOff="Clim : Off"
-            android:textOn="Clim: On"
-            android:textSize="20sp" />
-
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/swSilence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Mode Silencieux"
-            android:textSize="22sp" />
+            android:minHeight="56sp"
+            android:entries="@array/s02_postes" />
 
         <TextView
-            android:id="@+id/txtEtat"
+            android:id="@+id/txtPostes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp" />
+            android:textSize="22sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Poste (liste remplie par le code)"
+            android:textSize="24sp"
+            android:textStyle="bold"/>
+        <Spinner
+            android:id="@+id/spPosteCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp" />
+        <Button
+            android:id="@+id/btnVider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vider la liste"/>
+
     </LinearLayout>
 </ScrollView>
