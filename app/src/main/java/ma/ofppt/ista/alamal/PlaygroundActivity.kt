@@ -1,5 +1,6 @@
 package ma.ofppt.ista.alamal
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
@@ -7,6 +8,7 @@ import android.widget.PopupMenu
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Calendar
 
 
 // MODE COURS (Playground) : écran VIDE pour tester en direct les exemples montrés en cours.
@@ -55,6 +57,24 @@ class PlaygroundActivity : AppCompatActivity() {
             alert.show()
             true
         }
+        //fin etape 09
+        //Etape 10
+        val btnDate = findViewById<Button>(R.id.btnDate)
+        val txtDate = findViewById<TextView>(R.id.txtDate)
+
+        btnDate.setOnClickListener {
+            txtDate.text = "On va changer la date"
+            val cal = Calendar.getInstance()
+            val year = cal.get(Calendar.YEAR)
+            val month = cal.get(Calendar.MONTH)
+            val day = cal.get(Calendar.DAY_OF_MONTH)
+            txtDate.text = "$year/${month+1}/$day"
+            val dialogue = DatePickerDialog(this, {_, selYear, selMonth, selDay ->
+                txtDate.text = "$selYear/${selMonth + 1}/$selDay"
+            }, year, month, day)
+            dialogue.show()
+        }
+        //fin etape 10
     }
 }
 // Votre code ici

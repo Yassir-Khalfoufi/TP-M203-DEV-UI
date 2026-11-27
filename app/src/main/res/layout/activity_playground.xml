@@ -133,5 +133,16 @@
             android:layout_height="wrap_content"
             android:textSize="22sp" />
 
+        <Button
+            android:id="@+id/btnDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chnager la date"/>
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp" />
+
     </LinearLayout>
 </ScrollView>
