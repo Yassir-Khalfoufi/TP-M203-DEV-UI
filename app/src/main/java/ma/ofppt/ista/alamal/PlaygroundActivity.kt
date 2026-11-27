@@ -23,6 +23,9 @@ class PlaygroundActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playground)
+
+    }
+}
         // Votre code ici
         /*
        val tgl = findViewById<ToggleButton>(R.id.tglClim)
@@ -65,13 +68,17 @@ class PlaygroundActivity : AppCompatActivity() {
         btnVider.setOnClickListener {
             adapterSp1.clear()
         }
-    */
+        */
+
+        /* etape 7
         val txtRes = findViewById<TextView>(R.id.txtResa)
         val txtAction = findViewById<TextView>(R.id.txtAction)
         txtRes.setOnLongClickListener {
             startSupportActionMode(RapRes(txtRes, txtAction))
+            //we've selected the text
             true
         }
+        /*
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -111,6 +118,8 @@ class PlaygroundActivity : AppCompatActivity() {
         return true
     }
     */
+
+    /* Etape 7
     // menu d'actions contextuelles
     class RapRes(val txtRes: TextView, val txtAction: TextView) : ActionMode.Callback {
         override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean
@@ -131,7 +140,7 @@ class PlaygroundActivity : AppCompatActivity() {
 
         override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean
         {
+            //remove the selection
             return false
         }
-    }
-}
+    */
