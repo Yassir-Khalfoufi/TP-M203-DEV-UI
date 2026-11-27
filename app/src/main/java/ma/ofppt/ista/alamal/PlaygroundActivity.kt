@@ -47,7 +47,9 @@ class PlaygroundActivity : AppCompatActivity() {
                 txtPoste.text = p0?.getItemAtPosition(p2).toString()
             }
 
-            override fun onNothingSelected(p0: AdapterView<*>?) {}
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                txtPoste.text = "Aucun poste choisi"    // no poste selected anymore
+            }
         }
         val btnVider = findViewById<Button>(R.id.btnVider)
         val postes = mutableListOf("Poste 01", "Poste", "Poste 03", "poste 04", "Poste 05")
@@ -55,6 +57,8 @@ class PlaygroundActivity : AppCompatActivity() {
         // lier l adapter au liste
         sp1.adapter = adapterSp1
         //vider la liste quand on la clique
-        btnVider.setOnClickListener {  }
+        btnVider.setOnClickListener {
+            adapterSp1.clear()
+        }
     }
 }
