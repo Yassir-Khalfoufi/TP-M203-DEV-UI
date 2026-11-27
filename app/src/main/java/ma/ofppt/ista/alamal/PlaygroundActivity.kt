@@ -66,9 +66,10 @@ class PlaygroundActivity : AppCompatActivity() {
             adapterSp1.clear()
         }
     */
-        val textRes = findViewById<TextView>(R.id.txtResa)
-        textRes.setOnLongClickListener {
-            startSupportActionMode(RapRes())
+        val txtRes = findViewById<TextView>(R.id.txtResa)
+        val txtAction = findViewById<TextView>(R.id.txtAction)
+        txtRes.setOnLongClickListener {
+            startSupportActionMode(RapRes(txtRes, txtAction))
             true
         }
     }
@@ -78,7 +79,7 @@ class PlaygroundActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+    /*override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val txtMenu = findViewById<TextView>(R.id.txtMenu)
         when (item.itemId) {
             R.id.menu_tarifs -> txtMenu.text = "Le tarif est : 10dh / h"
@@ -87,6 +88,9 @@ class PlaygroundActivity : AppCompatActivity() {
         }
         return true
     }
+    */
+
+
     /*
     //Contextual Menu
     val txtPoste3 = findViewById<TextView>(R.id.txtPoste3)
@@ -108,32 +112,25 @@ class PlaygroundActivity : AppCompatActivity() {
     }
     */
     // menu d'actions contextuelles
-    class RapRes() : ActionMode.Callback {
-        override fun onActionItemClicked(
-            mode: ActionMode?,
-            item: MenuItem?
-        ): Boolean {
+    class RapRes(val txtRes: TextView, val txtAction: TextView) : ActionMode.Callback {
+        override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean
+        {
+            txtAction.text = "${item?.title}"
+            mode?.finish()
             return false
             // use find view by id in this section (you can't by default)
         }
-
-        override fun onCreateActionMode(
-            mode: ActionMode?,
-            menu: Menu?
-        ): Boolean {
+        override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean
+        {
             mode?.menuInflater?.inflate(R.menu.s02_menu_action, menu)
             mode?.title = "1 reservation"
             return true
         }
 
-        override fun onDestroyActionMode(mode: ActionMode?) {
-            return
-        }
+        override fun onDestroyActionMode(mode: ActionMode?) { return }
 
-        override fun onPrepareActionMode(
-            mode: ActionMode?,
-            menu: Menu?
-        ): Boolean {
+        override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?): Boolean
+        {
             return false
         }
     }
