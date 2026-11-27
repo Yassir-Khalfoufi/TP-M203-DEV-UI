@@ -36,7 +36,7 @@ class PlaygroundActivity : AppCompatActivity() {
                 true 
             }
         }
-        //etape 08 -- DialogAlert
+        //etape 09 -- AlertDialog
         val btnLibere = findViewById<Button>(R.id.btnLiberer)
         val txtDial = findViewById<TextView>(R.id.txtDialogue)
         btnLibere.setOnClickListener {
