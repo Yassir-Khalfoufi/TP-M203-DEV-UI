@@ -1,11 +1,14 @@
 package ma.ofppt.ista.alamal
 
 import android.app.DatePickerDialog
+import android.app.DialogFragment
+import android.app.TimePickerDialog
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.PopupMenu
 import android.widget.TextView
+import android.widget.TimePicker
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
@@ -75,6 +78,15 @@ class PlaygroundActivity : AppCompatActivity() {
             dialogue.show()
         }
         //fin etape 10
+    }
+    fun afficher(){
+
+    }
+}
+class HeurePickerFragment: TimePickerDialog.OnTimeSetListener, DialogFragment()
+{
+    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, min: Int) {
+        val activite = requireActivity
     }
 }
 // Votre code ici
