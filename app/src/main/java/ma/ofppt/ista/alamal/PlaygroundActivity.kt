@@ -1,9 +1,11 @@
 package ma.ofppt.ista.alamal
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -31,8 +33,27 @@ class PlaygroundActivity : AppCompatActivity() {
                         txtPopup.text = "Impression de ticket a mehdi"
                     }
                 }
-                true
+                true 
             }
+        }
+        //etape 08 -- DialogAlert
+        val btnLibere = findViewById<Button>(R.id.btnLiberer)
+        val txtDial = findViewById<TextView>(R.id.txtDialogue)
+        btnLibere.setOnClickListener {
+            val alert = AlertDialog.Builder(this)
+            alert.setTitle("Liberer le poste 3")
+            alert.setMessage("La session de Yassine sera fermée")
+            alert.setPositiveButton("Oui"){_,_ ->
+                txtDial.text="Le poste 3 libre"
+            }
+            alert.setNegativeButton("Non") { _, _ ->
+                txtDial.text = "Le poste 3 occupe"
+            }
+            alert.setNeutralButton("Plus tard"){_,_ ->
+                txtDial.text = "Le poste est toujours occupé, rien n'est specifié"
+            }
+            alert.show()
+            true
         }
     }
 }
